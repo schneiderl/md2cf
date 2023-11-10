@@ -259,7 +259,7 @@ def test_page_needs_updating_page_changed(mocker):
         parent_id=mocker.sentinel.parent_id,
     )
 
-    assert md2cf.upsert.page_needs_updating(
+    assert schneiderl_md2cf.upsert.page_needs_updating(
         page, existing_page_mock, replace_all_labels=False
     )
 
@@ -287,7 +287,7 @@ def test_page_needs_updating_content_replace_all_labels_and_labels_not_changed(m
         label_mock.name = label
         existing_page_mock.metadata.labels.results.append(label_mock)
 
-    assert not md2cf.upsert.page_needs_updating(
+    assert not schneiderl_md2cf.upsert.page_needs_updating(
         page, existing_page_mock, replace_all_labels=True
     )
 
@@ -306,7 +306,7 @@ def test_page_needs_updating_from_top_page_to_another_parent(mocker):
     existing_page_mock.version.message = message_hash
     existing_page_mock.metadata.labels.results = []
 
-    assert md2cf.upsert.page_needs_updating(
+    assert schneiderl_md2cf.upsert.page_needs_updating(
         page, existing_page_mock, replace_all_labels=True
     )
 
@@ -327,7 +327,7 @@ def test_page_needs_updating_from_child_page_to_top_page(mocker):
     existing_page_mock.version.message = message_hash
     existing_page_mock.metadata.labels.results = []
 
-    assert md2cf.upsert.page_needs_updating(
+    assert schneiderl_md2cf.upsert.page_needs_updating(
         page, existing_page_mock, replace_all_labels=True
     )
 
@@ -350,7 +350,7 @@ def test_page_needs_updating_from_grandchild_page_to_top_page(mocker):
     existing_page_mock.version.message = message_hash
     existing_page_mock.metadata.labels.results = []
 
-    assert md2cf.upsert.page_needs_updating(
+    assert schneiderl_md2cf.upsert.page_needs_updating(
         page, existing_page_mock, replace_all_labels=True
     )
 
@@ -376,7 +376,7 @@ def test_page_needs_updating_content_replace_all_labels_and_labels_changed(mocke
         label_mock.name = label
         existing_page_mock.metadata.labels.results.append(label_mock)
 
-    assert md2cf.upsert.page_needs_updating(
+    assert schneiderl_md2cf.upsert.page_needs_updating(
         page, existing_page_mock, replace_all_labels=True
     )
 
@@ -405,7 +405,7 @@ def test_page_needs_updating_content_replace_all_labels_but_no_labels_supplied(m
         label_mock.name = label
         existing_page_mock.metadata.labels.results.append(label_mock)
 
-    assert not md2cf.upsert.page_needs_updating(
+    assert not schneiderl_md2cf.upsert.page_needs_updating(
         page, existing_page_mock, replace_all_labels=True
     )
 
@@ -437,7 +437,7 @@ def test_page_needs_updating_content_replace_all_labels_and_empty_labels_supplie
         label_mock.name = label
         existing_page_mock.metadata.labels.results.append(label_mock)
 
-    assert md2cf.upsert.page_needs_updating(
+    assert schneiderl_md2cf.upsert.page_needs_updating(
         page, existing_page_mock, replace_all_labels=True
     )
 
@@ -464,6 +464,6 @@ def test_page_needs_updating_content_replace_all_labels_and_empty_labels_supplie
 
     existing_page_mock.metadata.labels.results = []
 
-    assert not md2cf.upsert.page_needs_updating(
+    assert not schneiderl_md2cf.upsert.page_needs_updating(
         page, existing_page_mock, replace_all_labels=True
     )
