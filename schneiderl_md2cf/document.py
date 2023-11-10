@@ -8,8 +8,8 @@ import mistune
 import yaml
 from yaml.parser import ParserError
 
-from md2cf.confluence_renderer import ConfluenceRenderer, RelativeLink
-from md2cf.ignored_files import GitRepository
+from schneiderl_md2cf.confluence_renderer import ConfluenceRenderer, RelativeLink
+from schneiderl_md2cf.ignored_files import GitRepository
 
 
 class Page(object):

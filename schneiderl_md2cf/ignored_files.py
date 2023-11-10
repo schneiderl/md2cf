@@ -6,7 +6,7 @@ from typing import List
 
 import gitignorefile
 
-from md2cf.console_output import error_console
+from schneiderl_md2cf.console_output import error_console
 
 
 class GitRepository:

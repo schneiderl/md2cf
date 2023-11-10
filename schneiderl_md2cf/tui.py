@@ -6,7 +6,7 @@ import rich.table
 import rich.text
 import rich.tree
 
-from md2cf.console_output import console
+from schneiderl_md2cf.console_output import console
 
 
 class Md2cfTUI(object):
