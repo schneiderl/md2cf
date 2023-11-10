@@ -5,7 +5,7 @@ with open("README.md") as f:
 
 setup(
     name="schneiderl_md2cf",
-    version="2.3.0",
+    version="0.99.99",
     packages=["schneiderl_md2cf"],
     url="https://github.com/schneiderl/md2cf",
     license="MIT",
