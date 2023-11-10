@@ -4,13 +4,13 @@ with open("README.md") as f:
     long_description = f.read()
 
 setup(
-    name="md2cf",
+    name="schneiderl_md2cf",
     version="2.3.0",
-    packages=["md2cf"],
-    url="https://github.com/iamjackg/md2cf",
+    packages=["schneiderl_md2cf"],
+    url="https://github.com/schneiderl/md2cf",
     license="MIT",
-    author="Jack Gaino",
-    author_email="md2cf@jackgaino.com",
+    author="schneiderl",
+    author_email="schneiderl@schneiderl.com",
     description="Convert Markdown documents to Confluence",
     long_description=long_description,
     long_description_content_type="text/markdown",

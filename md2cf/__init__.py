@@ -1,2 +1,2 @@
-__version__ = "2.3.0"
-__url__ = "https://github.com/iamjackg/md2cf"
+__version__ = "1.0.0"
+__url__ = "https://github.com/schneiderl/md2cf"
