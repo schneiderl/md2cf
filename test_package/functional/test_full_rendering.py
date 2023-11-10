@@ -1,6 +1,6 @@
 import pytest
 
-from md2cf import document
+from schneiderl_md2cf import document
 
 
 @pytest.fixture(scope="module")

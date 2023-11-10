@@ -1,8 +1,8 @@
 import pytest
 
-import md2cf.upsert
-from md2cf.api import MinimalConfluence as Confluence
-from md2cf.document import Page
+import schneiderl_md2cf.upsert
+from schneiderl_md2cf.api import MinimalConfluence as Confluence
+from schneiderl_md2cf.document import Page
 
 
 def test_upsert_page(mocker):
@@ -21,7 +21,7 @@ def test_upsert_page(mocker):
 
     message = mocker.sentinel.message
 
-    upsert_result = md2cf.upsert.upsert_page(
+    upsert_result = schneiderl_md2cf.upsert.upsert_page(
         confluence=confluence,
         page=page,
         message=message,
@@ -75,7 +75,7 @@ def test_upsert_page_get_parent_by_title(mocker):
 
     message = mocker.sentinel.message
 
-    upsert_result = md2cf.upsert.upsert_page(
+    upsert_result = schneiderl_md2cf.upsert.upsert_page(
         confluence=confluence,
         page=page,
         message=message,
@@ -111,7 +111,7 @@ def test_upsert_page_parent_not_found(mocker):
     message = mocker.sentinel.message
 
     with pytest.raises(KeyError) as parent_exception:
-        md2cf.upsert.upsert_page(
+        schneiderl_md2cf.upsert.upsert_page(
             confluence=confluence,
             page=page,
             message=message,
@@ -138,7 +138,7 @@ def test_upsert_page_only_changed_new_page(mocker):
         body="hello there",
     )
 
-    upsert_result = md2cf.upsert.upsert_page(
+    upsert_result = schneiderl_md2cf.upsert.upsert_page(
         confluence=confluence, page=page, message="", only_changed=True
     )
 
@@ -176,7 +176,7 @@ def test_upsert_page_only_changed_modified_page(mocker):
         body="hello there",
     )
 
-    upsert_result = md2cf.upsert.upsert_page(
+    upsert_result = schneiderl_md2cf.upsert.upsert_page(
         confluence=confluence, page=page, message="", only_changed=True
     )
 
@@ -214,7 +214,7 @@ def test_upsert_page_only_changed_no_changes(mocker):
         parent_id=mocker.sentinel.parent_id,
     )
 
-    upsert_result = md2cf.upsert.upsert_page(
+    upsert_result = schneiderl_md2cf.upsert.upsert_page(
         confluence=confluence, page=page, message="", only_changed=True
     )
 
@@ -239,7 +239,7 @@ def test_page_needs_updating_page_not_changed(mocker):
         parent_id=mocker.sentinel.parent_id,
     )
 
-    assert not md2cf.upsert.page_needs_updating(
+    assert not schneiderl_md2cf.upsert.page_needs_updating(
         page, existing_page_mock, replace_all_labels=False
     )
 
